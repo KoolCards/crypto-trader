@@ -38,7 +38,7 @@ jobs:
       with:
         name: ethereum-price-data
         path: |
-          data/live/ethereum_price.parquet
+          data/ethereum_price.parquet
           logs/
         retention-days: 30
         
@@ -46,6 +46,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/live/ethereum_price.parquet
+        git add data/ethereum_price.parquet
         git commit -m "Update Ethereum price data [skip ci]" || exit 0
         git push 
