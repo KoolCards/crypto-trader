@@ -11,7 +11,7 @@ from datetime import date
 class LivePriceFetcher:
     def __init__(self):
         self.url = "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
-        self.dao = ParquetDao("data/live/ethereum_price.parquet")
+        self.dao = ParquetDao("data/ethereum_price.parquet")
 
     def _fetch_live_price(self) -> float:
         """
@@ -42,7 +42,7 @@ class LivePriceFetcher:
 def main():
     """Main function to execute the script"""
     print("Fetching Ethereum price from CoinGecko API...")
-    
+
     LivePriceFetcher().fetch_and_insert_live_price()
 
     
